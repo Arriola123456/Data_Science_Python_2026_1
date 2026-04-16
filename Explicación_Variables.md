@@ -211,21 +211,7 @@ habitacional del departamento.
 Precio de la vivienda expresado en términos de **Remuneraciones Mínimas
 Vitales (RMV) a valores de enero de 2007**. Como la RMV de enero de
 2007 era de **S/ 500**, la conversión consiste en dividir el precio
-nominal de cada año entre 500.
-
-#### Propósito
-
-Permite **comparar el costo real de la vivienda a lo largo del tiempo**
-neutralizando:
-
-- La inflación general acumulada entre 2004 y 2024.
-- El crecimiento del poder adquisitivo mínimo legal.
-
-Una variación en `housing_price_RMV2007` indica un cambio **real** en
-el costo de alquilar un dormitorio respecto al ingreso mínimo, mientras
-que una variación en `housing_price` puede deberse a la mera
-depreciación de la moneda.
-
+nominal de cada año entre 500. De esta forma, se tiene una especie de "precio relativo".
 ---
 
 ## 3. Controles
