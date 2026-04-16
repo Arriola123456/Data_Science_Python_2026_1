@@ -211,9 +211,7 @@ habitacional del departamento.
 Precio de la vivienda expresado en términos de **Remuneraciones Mínimas
 Vitales (RMV) a valores de enero de 2007**. Como la RMV de enero de
 2007 era de **S/ 500**, la conversión consiste en dividir el precio
-nominal de cada año por la RMV vigente en ese momento y multiplicar por
-500 (o, equivalentemente, expresar el precio en múltiplos de la RMV de
-2007).
+nominal de cada año entre 500.
 
 #### Propósito
 
