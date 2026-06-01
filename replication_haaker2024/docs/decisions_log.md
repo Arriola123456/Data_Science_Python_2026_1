@@ -162,3 +162,20 @@ ejecutable completo del pipeline (scripts Python de construcción y los `.do` de
 Stata), parametrizado para correr en cuanto existan datos y pesos. El IFH, la
 muestra y las estimaciones quedan codificados pero no ejecutados hasta tener
 insumos.
+
+### Prueba con la skill inei-microdatos (Fase 1)
+
+A pedido del usuario se instaló y probó la librería `inei-microdatos` (PyPI,
+v0.2.3). Resultado:
+
+- La skill funciona: catálogo bundled lista ENDES 1996-2024; el `--dry-run` de
+  `inei-microdatos download --survey endes --year-min 2014 --year-max 2014`
+  resuelve los 13 módulos correctamente.
+- La descarga real falla en los 13 módulos (`fail=13, ok=0`). El paquete baja
+  de `https://proyectos.inei.gob.pe/iinei/srienaho/descarga/...` y ese host
+  responde `HTTP 403 - "Host not in allowlist"`. Confirmado con curl directo.
+
+Conclusión: la skill no es el problema; el bloqueo es la allowlist de red del
+entorno. Para descargar ENDES hay que permitir `proyectos.inei.gob.pe` (e
+idealmente `inei.gob.pe`) en la política de red del entorno web, o subir los
+ZIP a un canal accesible (repo, release de GitHub, raw.githubusercontent).
