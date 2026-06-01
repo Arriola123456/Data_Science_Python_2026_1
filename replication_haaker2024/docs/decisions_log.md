@@ -107,3 +107,58 @@ aceptación de la Fase 0.
   `replication_haaker2024/`.
 - Se usan rutas relativas al proyecto en todo el código.
 - Convención de texto: sin em dashes; LaTeX con UTF-8 acentuado directo.
+
+### Respuestas del usuario (Fase 0)
+
+- Stack de estimación: AMBOS. Los `.do` de Stata son el entregable canónico y,
+  en paralelo, una implementación Python ejecutable valida los mismos números
+  en este entorno (donde Stata no está disponible).
+- Pesos/umbrales SISFOH: el usuario autoriza buscarlos en la web y proponerlos,
+  marcando como supuesto todo lo no verificable.
+
+### BLOQUEO de red detectado (Fase 0)
+
+La política de red de este entorno es restrictiva (allowlist). Se verificó:
+
+- Accesibles (HTTP 200): pypi.org, github.com, files.pythonhosted.org,
+  raw.githubusercontent.com.
+- Bloqueados: microdatos.inei.gob.pe (sin conexión), proyectos.inei.gob.pe
+  (403, host fuera de allowlist), diposit.ub.edu (403), bcrp.gob.pe y
+  mef.gob.pe (403 del servidor). La herramienta WebFetch está deshabilitada
+  (403 incluso en Wikipedia). WebSearch funciona pero solo devuelve resúmenes,
+  no el texto completo de los PDF, por lo que no permite transcribir de forma
+  fiable la tabla exacta de ponderaciones PCA del IFH.
+
+Consecuencias:
+
+1. No se puede descargar la microdata ENDES desde este entorno (host INEI
+   bloqueado). La Fase 1 queda bloqueada por red.
+2. No se puede leer el documento metodológico SISFOH (2010) ni la tesis de
+   Haaker desde aquí (hosts bloqueados). No hay reconstrucción pública del IFH
+   con ponderaciones en GitHub verificable.
+
+Esfuerzo de búsqueda realizado:
+
+- Identificada la fuente metodológica primaria: Valderrama y Pichihua,
+  "Propuesta metodológica para la focalización individual de los programas
+  sociales", Revista Estudios Económicos 21 (BCRP). Usa análisis de componentes
+  principales con escalamiento óptimo para el índice de bienestar y minimización
+  del error de focalización (filtración + 2x subcobertura) para los umbrales.
+  No accesible para transcribir cifras desde este entorno.
+- Identificada la tesis: Haaker (2024), repositorio UB handle 2445/220307. No
+  accesible desde este entorno.
+
+Decisión: NO se inventan ponderaciones ni umbrales. El proyecto requiere, para
+desbloquearse, una de estas vías (a confirmar por el usuario):
+
+(A) Aflojar la política de red del entorno para permitir INEI y gov.pe / UB, de
+    modo que pueda descargar tanto los datos ENDES como los documentos fuente.
+(B) Que el usuario suba a un canal accesible (commit al repo, release de GitHub
+    o raw.githubusercontent) el documento SISFOH con la tabla de pesos/umbrales
+    y los archivos ENDES, o sus extractos.
+
+Trabajo no bloqueado que se puede adelantar ahora (sin red): escribir el código
+ejecutable completo del pipeline (scripts Python de construcción y los `.do` de
+Stata), parametrizado para correr en cuanto existan datos y pesos. El IFH, la
+muestra y las estimaciones quedan codificados pero no ejecutados hasta tener
+insumos.
