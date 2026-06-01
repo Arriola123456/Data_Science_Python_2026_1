@@ -1,0 +1,10 @@
+# PLACEHOLDER - NO POBLAR CON VALORES INVENTADOS.
+# Este archivo debe poblarse a partir del documento metodologico SISFOH (2010)
+# que entregue el usuario. Columnas previstas (ajustar al documento real):
+# caracteristica,categoria,area,peso
+# Donde:
+#   caracteristica = insumo del IFH (ej. material_techo, combustible_cocina, ...)
+#   categoria      = valor o nivel de la caracteristica
+#   area           = area geografica a la que aplica el peso (ej. urbano/rural o region)
+#   peso           = ponderacion SISFOH
+caracteristica,categoria,area,peso
