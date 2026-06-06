@@ -1,4 +1,4 @@
-# Diccionario de Variables — `Final_Dataset_16_abril.xlsx`
+# Diccionario de Variables 
 
 Este documento describe el significado de cada variable incluida en el set
 de datos, las preguntas de la encuesta detrás de las variables derivadas
@@ -127,17 +127,6 @@ todos sus residentes son migrantes); en los departamentos no
 cubiertos, se mantiene el valor ENAHO calculado con la combinación
 P401G1/P401G2.
 
-#### Cuadro resumen — Stock de migrantes en Lima
-
-| Año | Stock en Lima | Fuente |
-|-----|--------------:|--------|
-| 2018 |   593 594 | ENPOVE 2018 |
-| 2019 |   201 631 | ENAHO (P401G1 + P401G2) |
-| 2020 |    86 839 | ENAHO (P401G1 + P401G2) |
-| 2021 |   151 625 | ENAHO (P401G1 + P401G2) |
-| 2022 |   742 078 | ENPOVE 2022 |
-| 2023 |   229 292 | ENAHO (P401G1 + P401G2) |
-| 2024 |   759 111 | ENAHOPV 2024 |
 
 #### Posible subrepresentación del stock real
 
@@ -209,7 +198,7 @@ habitacional del departamento.
 ### 2.3 `housing_price_RMV2007` — Precio de vivienda deflactado en RMV de enero 2007
 
 Precio de la vivienda expresado en términos de **Remuneraciones Mínimas
-Vitales (RMV) a valores de enero de 2007**. Como la RMV de enero de
+Vitales (RMV) de 2007**. Como la RMV de enero de
 2007 era de **S/ 500**, la conversión consiste en dividir el precio
 nominal de cada año entre 500. De esta forma, se tiene una especie de "precio relativo".
 ---
